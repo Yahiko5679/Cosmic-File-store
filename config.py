@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 from dotenv import load_dotenv
 import os
@@ -12,12 +12,18 @@ class Config:
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
 
     MONGODB_URI: str = os.getenv("MONGODB_URI", "")
-    DB_NAME: str = "CosmicFileBotz"
+    DB_NAME: str = "CosmicBotz"
 
     DB_CHANNEL: int = int(os.getenv("DB_CHANNEL", ""))
-    ADMINS: List[int] = [
-        int(x.strip()) for x in os.getenv("ADMINS", "").split(",") if x.strip().isdigit()
-    ]
+
+    # ── Fixed version ────────────────────────────────────────────────
+    ADMINS: List[int] = field(
+        default_factory=lambda: [
+            int(x.strip()) for x in os.getenv("ADMINS", "").split(",")
+            if x.strip().isdigit()
+        ]
+    )
+    # ─────────────────────────────────────────────────────────────────
 
     BOT_USERNAME: str = os.getenv("BOT_USERNAME", "CosmicFileBot").lstrip("@")
 
@@ -27,8 +33,7 @@ class Config:
         "Send me any file → get permanent shareable link!"
     )
 
-    # You can add later
-    PROTECT_CONTENT: bool = False
+    PROTECT_CONTENT: bool = True
 
     def validate(self):
         errors = []
