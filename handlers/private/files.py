@@ -15,7 +15,7 @@ media_filter = (
 )
 
 
-@Client.on_message(filters.private & media_filter)
+@app.on_message(filters.private & media_filter)
 async def handle_incoming_file(client: Client, message: Message):
     user = message.from_user
     if not user:
