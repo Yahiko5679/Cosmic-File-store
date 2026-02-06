@@ -12,7 +12,7 @@ app = Client(
     api_id=CONFIG.API_ID,
     api_hash=CONFIG.API_HASH,
     bot_token=CONFIG.BOT_TOKEN,
-    plugins={"root": "plugins"},
+    #plugins={"root": "plugins"},
 )
 
 async def run_bot():
