@@ -14,7 +14,7 @@ class Config:
     MONGODB_URI: str = os.getenv("MONGODB_URI", "")
     DB_NAME: str = "CosmicFileBotz"
 
-    DB_CHANNEL: int = int(os.getenv("DB_CHANNEL", "0"))
+    DB_CHANNEL: int = int(os.getenv("DB_CHANNEL", ""))
     ADMINS: List[int] = [
         int(x.strip()) for x in os.getenv("ADMINS", "").split(",") if x.strip().isdigit()
     ]
