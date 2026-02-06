@@ -3,7 +3,7 @@ from pyrogram.types import Message
 from config import CONFIG
 from utils.short_code import generate_short_code
 from database.operations.files import save_file_metadata
-
+from bot import app
 
 media_filter = (
     filters.document
