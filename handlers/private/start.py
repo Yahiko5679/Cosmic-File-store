@@ -4,7 +4,7 @@ from config import CONFIG
 from database.operations.files import get_file_by_code
 
 
-@Client.on_message(filters.private & filters.command("start"))
+    @app.on_message(filters.private & filters.command("start"))
 async def start_or_file_link(client: Client, message: Message):
     args = message.text.split(maxsplit=1)
 
