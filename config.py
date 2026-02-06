@@ -28,7 +28,7 @@ class Config:
     )
 
     # You can add later
-    PROTECT_CONTENT: bool = True
+    PROTECT_CONTENT: bool = False
 
     def validate(self):
         errors = []
