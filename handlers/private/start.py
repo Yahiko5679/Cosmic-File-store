@@ -2,6 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import CONFIG
 from database.operations.files import get_file_by_code
+from bot import app
 
 
 @app.on_message(filters.private & filters.command("start"))
