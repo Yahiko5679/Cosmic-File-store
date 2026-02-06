@@ -7,12 +7,12 @@ load_dotenv()
 
 @dataclass
 class Config:
-    API_ID: int = int(os.getenv("API_ID", "0"))
+    API_ID: int = int(os.getenv("API_ID", ""))
     API_HASH: str = os.getenv("API_HASH", "")
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
 
     MONGODB_URI: str = os.getenv("MONGODB_URI", "")
-    DB_NAME: str = "CosmicBotz"
+    DB_NAME: str = "CosmicFileBotz"
 
     DB_CHANNEL: int = int(os.getenv("DB_CHANNEL", "0"))
     ADMINS: List[int] = [
